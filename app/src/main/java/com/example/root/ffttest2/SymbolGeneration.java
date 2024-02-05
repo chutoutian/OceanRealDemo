@@ -396,7 +396,7 @@ public class SymbolGeneration {
         }
         FileOperations.writetofile(MainActivity.av, uncoded + "",
                 Utils.genName(Constants.SignalType.TxBits, m_attempt) + ".txt");
-        //Utils.log(uncoded +"=>"+coded+"=>"+Constants.mmap.get(Constants.messageID));
+        //Utils.log(uncoded +"=>"+coded+"=>"+Constants.mmap.get(Constants.messageID));fff
         Utils.log(uncoded +"=>"+coded);
         return Utils.convert(coded);
     }
