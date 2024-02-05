@@ -1,0 +1,1278 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/myview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/graphProd"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch11" />
+
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/graphProd2"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/graphProd" />
+
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/graphProd3"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/graphProd2" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onstart"
+        android:text="send"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.919"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner3" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Preamble len (ms)"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumber2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+
+    <EditText
+        android:id="@+id/editTextNumber2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/editTextNumber"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Init sleep (s)"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumber3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber2" />
+
+    <EditText
+        android:id="@+id/editTextNumber3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/editTextNumber2"
+        app:layout_constraintStart_toStartOf="@+id/editTextNumber2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber2" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="50dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@+id/button3"
+        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintTop_toTopOf="@+id/textView6" />
+
+    <Switch
+        android:id="@+id/switch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Decode"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@+id/switch1"
+        app:layout_constraintTop_toTopOf="@+id/switch1" />
+
+    <TextView
+        android:id="@+id/msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text=""
+        android:textSize="40dp"
+        app:layout_constraintTop_toBottomOf="@+id/graphProd3" />
+
+    <ImageView
+        android:id="@+id/imageView_fish"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:contentDescription="@string/image_view"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+
+    <TextView
+        android:id="@+id/fishExist"
+        android:layout_width="50dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/FishExistTitle"
+        app:layout_constraintStart_toEndOf="@+id/FishExistTitle" />
+
+    <TextView
+        android:id="@+id/FishExistTitle"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="32dp"
+        android:text="Fish?"
+        app:layout_constraintBottom_toBottomOf="@+id/fishCountTitle"
+        app:layout_constraintStart_toEndOf="@+id/fishCount" />
+
+    <TextView
+        android:id="@+id/inferenceTime"
+        android:layout_width="50dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/inferenceTimeTitle"
+        app:layout_constraintStart_toEndOf="@+id/inferenceTimeTitle" />
+
+    <TextView
+        android:id="@+id/inferenceTimeTitle"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="96dp"
+        android:text="Inference Time Used:"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_fish"
+        app:layout_constraintBottom_toTopOf="@+id/modelSpinner"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/segmentButton"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="16dp"
+        android:text="Run Model"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/clearbutton"
+        app:layout_constraintStart_toStartOf="@+id/buttonResize" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/segmentButton"
+        app:layout_constraintEnd_toEndOf="@+id/segmentButton"
+        app:layout_constraintStart_toStartOf="@+id/segmentButton"
+        app:layout_constraintTop_toTopOf="@+id/segmentButton" />
+
+    <Spinner
+        android:id="@+id/modelSpinner"
+        android:layout_width="219dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/segmentButton" />
+
+
+    <Button
+        android:id="@+id/clearbutton"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="clear"
+        android:text="Clear"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/restartButton"
+        app:layout_constraintStart_toStartOf="@+id/restartButton" />
+
+    <Button
+        android:id="@+id/restartButton"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="16dp"
+        android:text="Next"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/buttonResize"
+        app:layout_constraintStart_toStartOf="@+id/buttonResize" />
+
+    <EditText
+        android:id="@+id/editWidth"
+        style="@android:style/Widget.EditText"
+        android:layout_width="50dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:inputType="text"
+        android:singleLine="true"
+        android:text="426"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/modelSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/modelSpinner" />
+
+    <EditText
+        android:id="@+id/editHeight"
+        android:layout_width="50dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="32dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="240"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/editWidth"
+        app:layout_constraintTop_toTopOf="@+id/editWidth" />
+
+    <Button
+        android:id="@+id/sendbutton"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="onstart"
+        android:text="Send"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="@+id/editWidth"
+        app:layout_constraintTop_toBottomOf="@+id/editWidth"/>
+
+
+    <Button
+        android:id="@+id/buttonResize"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Resize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/fishCount"
+        android:layout_width="50dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/fishCountTitle"
+        app:layout_constraintStart_toEndOf="@+id/fishCountTitle" />
+
+    <TextView
+        android:id="@+id/fishCountTitle"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="24dp"
+        android:text="Fish \nCount:"
+        app:layout_constraintBottom_toTopOf="@+id/modelSpinner"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/my_image_view"
+        android:layout_width="400dp"
+        android:layout_height="180dp"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/graphProd3" />
+
+    <GridLayout
+        android:id="@+id/scrollView2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="4"
+        android:fillViewport="true"
+        android:rowCount="4"
+        android:scrollbars="vertical"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_image_view">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:layout_margin="5dp"
+            app:srcCompat="@drawable/i1" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/i2" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/i3" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/i4" />
+
+        <TextView
+            android:id="@+id/sym1"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Ascend" />
+
+        <TextView
+            android:id="@+id/sym2"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Descend"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/sym3"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Something's wrong"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/sym4"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Are you okay?"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/i5" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/i6" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/i7" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/i8" />
+
+        <TextView
+            android:id="@+id/sym5"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Okay"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/sym6"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Stop!"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/sym7"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Turn around"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/sym8"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Which way?"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/i9" />
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/i10" />
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/i11" />
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/i12" />
+
+        <TextView
+            android:id="@+id/sym9"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Boat"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/sym10"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Go to buddy"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/sym11"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Hold on!"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/sym12"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Who's leading?"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/imageView13"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/i13" />
+
+        <ImageView
+            android:id="@+id/imageView14"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/i14" />
+
+        <ImageView
+            android:id="@+id/imageView15"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/i15" />
+
+        <ImageView
+            android:id="@+id/imageView16"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/i16" />
+
+        <TextView
+            android:id="@+id/sym13"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Level off"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/sym14"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Relax"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/sym15"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Give me air!"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/sym16"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Out of air!"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/imageView17"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/i17" />
+
+        <ImageView
+            android:id="@+id/imageView18"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/i18" />
+
+        <ImageView
+            android:id="@+id/imageView19"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/i19" />
+
+        <ImageView
+            android:id="@+id/imageView20"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/i20" />
+
+        <TextView
+            android:id="@+id/sym17"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Help!"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/sym18"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="I don't know"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/sym19"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Danger over there"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/sym20"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="I'm cold"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/imageView21"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/i21" />
+
+        <ImageView
+            android:id="@+id/imageView22"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/i22" />
+
+        <ImageView
+            android:id="@+id/imageView23"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/i23" />
+
+        <ImageView
+            android:id="@+id/imageView24"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/i24" />
+
+        <TextView
+            android:id="@+id/sym21"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Look"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/sym22"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Think"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/sym23"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Ear is blocked"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/sym24"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Cut the line"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/imageView25"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/music_foreground"
+            tools:ignore="VectorDrawableCompat" />
+    </GridLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="250dp"
+        android:layout_marginBottom="50dp"
+        android:fillViewport="true"
+        android:scrollbars="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch12">
+
+        <TextView
+            android:id="@+id/debugPane"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0" />
+    </androidx.core.widget.NestedScrollView>
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/msg" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Volume"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editTextNumber" />
+
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="0000"
+        android:textSize="30dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch4" />
+
+    <Switch
+        android:id="@+id/switch3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/switch2"
+        app:layout_constraintStart_toEndOf="@+id/switch2"
+        app:layout_constraintTop_toTopOf="@+id/switch2" />
+
+    <EditText
+        android:id="@+id/editTextNumber4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberSigned"
+        android:text=""
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber3" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SNR thresh"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumber4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber3" />
+
+    <EditText
+        android:id="@+id/editTextNumber5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber4" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="# syms"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumber5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber4" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="clear"
+        android:text="clear"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toTopOf="@+id/textView6" />
+
+    <EditText
+        android:id="@+id/editTextNumber6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber5" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="f1"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumber6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber5" />
+
+    <EditText
+        android:id="@+id/editTextNumber7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber6" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="f2"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumber7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber6" />
+
+    <EditText
+        android:id="@+id/editTextNumber8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber7" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="symreps"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumber8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber7" />
+
+    <EditText
+        android:id="@+id/editTextNumber9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber8" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="# measurements"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumber9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber8" />
+
+    <Switch
+        android:id="@+id/switch4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="IMU"
+        android:visibility="gone"
+        android:enabled="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch1" />
+
+    <Switch
+        android:id="@+id/switch5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="Stereo"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@+id/switch4"
+        app:layout_constraintTop_toBottomOf="@+id/switch2" />
+
+    <Switch
+        android:id="@+id/switch6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="Est sig"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/switch5"
+        app:layout_constraintStart_toEndOf="@+id/switch5"
+        app:layout_constraintTop_toBottomOf="@+id/switch2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="true"
+        android:onClick="onstop"
+        android:text="stop"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/button"
+        app:layout_constraintStart_toStartOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <Switch
+        android:id="@+id/switch7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FeedPre"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/switch5" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Code rate"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spinner" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="204dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber9" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SNR method"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spinner2" />
+
+    <Switch
+        android:id="@+id/switch8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Data"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@+id/switch7"
+        app:layout_constraintTop_toBottomOf="@+id/switch6" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exp #"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editTextNumber10" />
+
+    <EditText
+        android:id="@+id/editTextNumber10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:visibility="gone"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sync lag"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumber11"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner2" />
+
+    <EditText
+        android:id="@+id/editTextNumber11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:visibility="gone"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner2" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scale factor"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumber12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber11" />
+
+    <EditText
+        android:id="@+id/editTextNumber12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:visibility="gone"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber11" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="thresh 2"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumber13"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber12" />
+
+    <EditText
+        android:id="@+id/editTextNumber13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:visibility="gone"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber12" />
+
+    <Switch
+        android:id="@+id/switch9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Flip"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/graphProd"
+        app:layout_constraintStart_toEndOf="@+id/switch1" />
+
+    <EditText
+        android:id="@+id/editTextNumber14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:visibility="gone"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber13" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="xcorr thresh"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumber14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber13" />
+
+    <EditText
+        android:id="@+id/editTextNumber15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:visibility="gone"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber14" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="xcorr thresh 2"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumber15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber14" />
+
+    <EditText
+        android:id="@+id/editTextNumber17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:visibility="gone"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber15" />
+
+    <EditText
+        android:id="@+id/editTextNumber18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber17" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="var"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumber17"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editTextNumber17" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="xcorr above thresh"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumber18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editTextNumber18" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="naiser thresh"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumber25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editTextNumber25" />
+
+    <EditText
+        android:id="@+id/editTextNumber25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:visibility="gone"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber18" />
+
+    <Switch
+        android:id="@+id/switch10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Naiser"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+    <Switch
+        android:id="@+id/switch11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Check syms"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch10" />
+
+    <EditText
+        android:id="@+id/editTextNumber26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:visibility="gone"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber25" />
+
+    <EditText
+        android:id="@+id/editTextNumber27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:visibility="gone"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber26" />
+
+    <Spinner
+        android:id="@+id/spinner3"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber27" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="feedback thresh"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumber26"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editTextNumber26" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="symcheck snr thresh"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumber27"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editTextNumber27" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ns"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spinner3" />
+
+    <Switch
+        android:id="@+id/switch12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="Listening"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
